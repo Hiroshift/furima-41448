@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :user do
-    nickname              {Faker::Name.initials(number: 2)}
-    email                 {Faker::Internet.unique.email}
-    password              { 'password1' }  # 必ず英数字が混在する文字列を指定
+    nickname              { Faker::Name.initials(number: 2) }
+    email                 { Faker::Internet.unique.email }
+    password              { 'password1' }
     password_confirmation { 'password1' }
     last_name             { '山田' }
     first_name            { '太郎' }
