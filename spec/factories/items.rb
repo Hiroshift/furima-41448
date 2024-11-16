@@ -6,7 +6,7 @@ FactoryBot.define do
 
     association :user
 
-    category_id { 2 } 
+    category_id { 2 }
     condition_id { 2 }
     shipping_fee_id { 2 }
     prefecture_id { 2 }
