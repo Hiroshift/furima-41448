@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
-      render :show, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -39,7 +39,7 @@ class ItemsController < ApplicationController
       if @item.destroy
         redirect_to root_path
       else
-        render :index, status: :unprocessable_entity
+        render :show, status: :unprocessable_entity
       end
     else
       redirect_to root_path
