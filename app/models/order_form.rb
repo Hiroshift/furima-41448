@@ -3,18 +3,21 @@ class OrderForm
   # 必要なカラムを仮で定義
   attr_accessor :postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :user_id, :item_id, :token
 
-  # バリデーションを追加する予定
   # バリデーションを記述
   with_options presence: true do
-    validates :token
+    # validates :token
     validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'is invalid. Enter it as follows (e.g. 123-4567)' }
     validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :house_number
-    validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is invalid. Input only number' }
+    validates :phone_number, length: { minimum: 10, message: 'is too short' },
+                             format: { with: /\A\d{10,11}\z/, message: 'is invalid. Input only number' }
+                           
     validates :user_id
     validates :item_id
-  end
+end
+
+  
 
   def save
     # 購入履歴を保存
