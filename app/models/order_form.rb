@@ -11,16 +11,13 @@ class OrderForm
     validates :city
     validates :house_number
     validates :phone_number,
-          presence: { message: "can't be blank" },
-          length: { in: 10..11, message: 'is too short' },
-          format: { with: /\A\d+\z/, message: 'is invalid. Input only number' }
+              presence: { message: "can't be blank" },
+              length: { in: 10..11, message: 'is too short' },
+              format: { with: /\A\d+\z/, message: 'is invalid. Input only number' }
 
-                           
     validates :user_id
     validates :item_id
-end
-
-  
+  end
 
   def save
     # 購入履歴を保存
