@@ -12,7 +12,7 @@ class OrderForm
     validates :house_number
     validates :phone_number,
               presence: { message: "can't be blank" },
-              length: { in: 10..11, message: 'is too short' },
+              length: { minimum: 10, too_short: 'is too short', maximum: 11, too_long: 'is invalid. Input only number' },
               format: { with: /\A\d+\z/, message: 'is invalid. Input only number' }
 
     validates :user_id

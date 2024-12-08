@@ -62,6 +62,12 @@ RSpec.describe OrderForm, type: :model do
         expect(@order_form.errors.full_messages).to include('Phone number is too short')
       end
 
+      it '電話番号が12桁以上では保存できないこと' do
+        @order_form.phone_number = '090123456789'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include('Phone number is invalid. Input only number')
+      end
+
       it '電話番号が半角数字以外では保存できないこと' do
         @order_form.phone_number = '090-1234-5678'
         @order_form.valid?
