@@ -79,7 +79,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 1.5.0'
+  gem 'pg', '~> 1.2.0'
 end
 
 gem 'devise'
