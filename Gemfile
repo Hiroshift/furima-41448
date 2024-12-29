@@ -78,10 +78,6 @@ group :development do
   gem 'rubocop', require: false
 end
 
-group :production do
-  gem 'pg', '~> 1.2.0'
-end
-
 gem 'devise'
 
 gem 'mini_magick'
